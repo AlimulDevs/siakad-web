@@ -1,0 +1,8 @@
+1.install sanctum
+composer require laravel/sanctum
+
+2.publish sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+3.migrate
+php artisan migrate
