@@ -13,5 +13,12 @@ class WaktuJadwal extends Model
         'jam_awal',
         'jam_akhir',
     ];
+
+
+    public function jadwal()
+    {
+        return $this->belongsTo(Jadwal::class);
+    }
+
     use HasFactory;
 }

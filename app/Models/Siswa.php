@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Siswa extends Model
 {
     protected $fillable = [
-        'jurusan',
+        'jurusan_id',
         'kelas_id',
         'user_id',
     ];
@@ -16,6 +16,14 @@ class Siswa extends Model
     public function kelas()
     {
         return $this->belongsTo(Kelas::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function jurusan()
+    {
+        return $this->belongsTo(Jurusan::class);
     }
     use HasFactory;
 }

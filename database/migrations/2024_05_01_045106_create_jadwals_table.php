@@ -17,10 +17,12 @@ class CreateJadwalsTable extends Migration
             $table->id();
             $table->unsignedBigInteger("guru_id");
             $table->unsignedBigInteger("kelas_id");
-            $table->string("mata_pelajaran");
+            $table->unsignedBigInteger("mata_pelajaran_id");
             $table->foreign("guru_id")->references("id")->on("gurus")->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign("kelas_id")->references("id")->on("kelas")->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign("mata_pelajaran_id")->references("id")->on("mata_pelajarans")->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
         });

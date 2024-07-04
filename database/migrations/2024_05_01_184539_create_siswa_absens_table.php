@@ -22,6 +22,7 @@ class CreateSiswaAbsensTable extends Migration
                 ->onUpdate('cascade');
             $table->foreign("absen_id")->references("id")->on("absens")->onDelete('cascade')
                 ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

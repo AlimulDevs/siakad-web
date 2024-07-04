@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Helpers\DeleteFile;
+use App\Helpers\UploadFile;
 use App\Http\Controllers\Controller;
 use App\Models\Guru;
 use App\Models\Siswa;
@@ -42,7 +44,7 @@ class UserApiController extends Controller
         Siswa::create([
             "user_id" => $user->id,
             "kelas_id" => $request->kelas_id,
-            "jurusan" => $request->jurusan,
+            "jurusan_id" => $request->jurusan_id,
         ]);
 
         $data = $user->with("siswa")->first();
@@ -122,5 +124,28 @@ class UserApiController extends Controller
         } else {
             return response()->json(["message" => "Failed Login, Wrong Password"]);
         }
+    }
+
+    public function editPhotoProfile(Request $request)
+    {
+
+        $data_user = User::where("id",  auth()->user()->id)->first();
+
+        if ($data_user->photo_profile_url !== null) {
+            DeleteFile::delete($data_user->photo_profile_url);
+        }
+
+        $photo_profile_url = UploadFile::upload("foto_profile", $request->file("photo_profile_url"));
+
+        $user = User::where("id",  auth()->user()->id)->update([
+            "photo_profile_url" => $photo_profile_url,
+
+
+        ]);
+
+        return response()->json([
+            'isSuccess' => true,
+            "message" => "Success Update Photo Profile",
+        ]);
     }
 }

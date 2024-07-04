@@ -17,10 +17,12 @@ class CreateSiswasTable extends Migration
             $table->id();
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("kelas_id");
-            $table->string("jurusan")->nullable();
+            $table->unsignedBigInteger("jurusan_id");
             $table->foreign("user_id")->references("id")->on("users")->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign("kelas_id")->references("id")->on("kelas")->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreign("jurusan_id")->references("id")->on("jurusans")->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
         });

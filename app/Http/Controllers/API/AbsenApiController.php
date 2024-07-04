@@ -41,7 +41,7 @@ class AbsenApiController extends Controller
 
     public function getByJadwal($jadwal_id)
     {
-        $absen = Absen::where("jadwal_id", $jadwal_id)->with("siswa_absen.siswa")->get();
+        $absen = Absen::where("jadwal_id", $jadwal_id)->with("siswa_absen.siswa.user")->get();
         return response()->json([
             "message" => "Success Get By Jadwal",
             "data" => $absen
