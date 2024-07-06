@@ -6,6 +6,7 @@ use App\Http\Controllers\API\JadwalApiController;
 use App\Http\Controllers\API\JurusanApiController;
 use App\Http\Controllers\API\KelasApiController;
 use App\Http\Controllers\API\MataPelajaranApiController;
+use App\Http\Controllers\API\NilaiAkhirApiController;
 use App\Http\Controllers\API\UserApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -60,7 +61,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::GET('/waktu-jadwal/get-by-kelas', [JadwalApiController::class, "getWaktuJadwalByKelas"]);
     Route::GET('/jadwal/get-by-guru', [JadwalApiController::class, "getByGuru"]);
 
+
+
     Route::GET('/absen/get-by-jadwal/{jadwal_id}', [AbsenApiController::class, "getByJadwal"]);
     Route::POST('/absen', [AbsenApiController::class, "create"]);
     Route::PUT('/siswa-absen/{absen_id}', [AbsenApiController::class, "siswaAbsen"]);
+
+
+    Route::GET('/siswa/nilai-akhir', [NilaiAkhirApiController::class, "getBySiswa"]);
 });

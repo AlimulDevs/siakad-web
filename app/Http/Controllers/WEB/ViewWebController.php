@@ -14,7 +14,11 @@ use App\Models\WaktuJadwal;
 use Illuminate\Http\Request;
 
 class ViewWebController extends Controller
+
+
+
 {
+
     public function loginIndex()
     {
         return view('auth.login');
@@ -29,6 +33,9 @@ class ViewWebController extends Controller
     }
     public function berandaView()
     {
+        if (session()->get('remember_token') == "") {
+            return redirect("/loginIndex");
+        }
         $jumlah_guru = Guru::count();
         $jumlah_siswa = Siswa::count();
         $jumlah_jurusan = Jurusan::count();

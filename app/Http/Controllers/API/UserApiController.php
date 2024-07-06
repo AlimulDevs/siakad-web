@@ -57,7 +57,7 @@ class UserApiController extends Controller
     {
         try {
 
-            $user = User::where("id", auth()->user()->id)->with("guru")->with("siswa.kelas")->first();
+            $user = User::where("id", auth()->user()->id)->with(["guru", "siswa.kelas", "siswa.jurusan"])->first();
             return [
                 'isSuccess' => true,
                 'message' => 'Success Get Profile',

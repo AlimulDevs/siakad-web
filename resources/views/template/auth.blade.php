@@ -20,7 +20,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="#" style="color: green; font-weight: 800;"><b style="color: #F18119;">SPK </b>SPK SIAKAD</a>
+            <a href="#" style="color: green; font-weight: 800;"><b style="color: #F18119;"> SIAKAD</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
