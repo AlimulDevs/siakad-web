@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::PUT('/profile', [UserApiController::class, "editProfile"]);
     Route::POST('/photo-profile', [UserApiController::class, "editPhotoProfile"]);
     Route::GET('/jadwal/get-by-kelas', [JadwalApiController::class, "getByKelas"]);
+    Route::GET('/waktu-jadwal/get-by-kelas', [JadwalApiController::class, "getWaktuJadwalByKelas"]);
     Route::GET('/jadwal/get-by-guru', [JadwalApiController::class, "getByGuru"]);
 
     Route::GET('/absen/get-by-jadwal/{jadwal_id}', [AbsenApiController::class, "getByJadwal"]);

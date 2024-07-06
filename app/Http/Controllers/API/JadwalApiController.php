@@ -31,6 +31,24 @@ class JadwalApiController extends Controller
             "data" => $data_jadwal
         ]);
     }
+    public function getWaktuJadwalByKelas()
+    {
+        $data_siswa = Siswa::where("user_id", auth()->user()->id)->first();
+
+        $data_jadwal = Jadwal::where("kelas_id", $data_siswa->kelas_id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal.jadwal.mata_pelajaran", "absen"])->get();
+        $data_waktu_jadwal = [];
+
+        foreach ($data_jadwal as $dtj) {
+            foreach ($dtj->waktu_jadwal as $dtwj) {
+                $data_waktu_jadwal[] = $dtwj;
+            }
+        }
+
+        return response()->json([
+            "message" => "Success Get By Kelas",
+            "data" => $data_waktu_jadwal
+        ]);
+    }
     public function getByGuru()
     {
         $data_guru = Guru::where("user_id", auth()->user()->id)->first();
