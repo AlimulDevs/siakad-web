@@ -22,11 +22,20 @@ class ViewWebController extends Controller
 
     public function registerIndex()
     {
+
+
+
         return view('auth.register');
     }
     public function berandaView()
     {
-        return view('beranda.index');
+        $jumlah_guru = Guru::count();
+        $jumlah_siswa = Siswa::count();
+        $jumlah_jurusan = Jurusan::count();
+        $jumlah_kelas = Kelas::count();
+        $jumlah_mata_pelajaran = MataPelajaran::count();
+        $jumlah_jadwal = Jadwal::count();
+        return view('beranda.index', compact("jumlah_guru", "jumlah_siswa", "jumlah_jurusan", "jumlah_kelas", "jumlah_mata_pelajaran", "jumlah_jadwal"));
     }
 
 

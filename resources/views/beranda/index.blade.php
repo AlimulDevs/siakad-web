@@ -88,15 +88,85 @@
 
 
 
-    <div class="row justify-content-start ">
+    <div class="row justify-content-center ">
         <div class="col-md-3 col-sm-6 col-12">
-            <a href="/alternatif/index" class="text-dark">
+            <a href="/guru/index" class="text-dark">
                 <div class="info-box">
-                    <span class="info-box-icon bg-info"><i class="far fa-file-alt"></i></span>
+                    <span class="info-box-icon bg-info"><i class="fas fa-chalkboard-teacher"></i></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Data Guru</span>
-                        <span class="info-box-number">1</span>
+                        <span class="info-box-number">{{$jumlah_guru}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </a>
+            <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-12">
+            <a href="/jurusan/index" class="text-dark">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-briefcase"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Data Jurusan</span>
+                        <span class="info-box-number">{{$jumlah_jurusan}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </a>
+            <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-12">
+            <a href="/kelas/index" class="text-dark">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-chalkboard"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Data Kelas</span>
+                        <span class="info-box-number">{{$jumlah_kelas}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </a>
+            <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-12">
+            <a href="/mata-pelajaran/index" class="text-dark">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-book"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Data Mata Pelajaran</span>
+                        <span class="info-box-number">{{$jumlah_mata_pelajaran}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </a>
+            <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-12">
+            <a href="/jadwal/index" class="text-dark">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-clock"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Data Jadwal</span>
+                        <span class="info-box-number">{{$jumlah_jadwal}}</span>
+                    </div>
+                    <!-- /.info-box-content -->
+                </div>
+            </a>
+            <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-12">
+            <a href="/siswa/index" class="text-dark">
+                <div class="info-box">
+                    <span class="info-box-icon bg-info"><i class="fas fa-users"></i></span>
+
+                    <div class="info-box-content">
+                        <span class="info-box-text">Data Siswa</span>
+                        <span class="info-box-number">{{$jumlah_siswa}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>

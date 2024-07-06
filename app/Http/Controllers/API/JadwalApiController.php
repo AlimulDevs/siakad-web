@@ -25,7 +25,7 @@ class JadwalApiController extends Controller
     {
         $data_siswa = Siswa::where("user_id", auth()->user()->id)->first();
 
-        $data_jadwal = Jadwal::where("kelas_id", $data_siswa->kelas_id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal", "absen"])->get();
+        $data_jadwal = Jadwal::where("kelas_id", $data_siswa->kelas_id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal.jadwal.mata_pelajaran", "absen"])->get();
         return response()->json([
             "message" => "Success Get By Kelas",
             "data" => $data_jadwal

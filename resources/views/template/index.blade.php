@@ -122,7 +122,7 @@
 
                         <li class="nav-item ">
                             <a href="/guru/index" class="nav-link {{(request()->is('guru/*')?'bg-secondary':'')}}">
-                                <i class="nav-icon fas fa-file-alt"></i>
+                                <i class="nav-icon fas fa-chalkboard-teacher"></i>
                                 <p>
                                     GURU
 
@@ -131,7 +131,7 @@
                         </li>
                         <li class="nav-item ">
                             <a href="/jurusan/index" class="nav-link {{(request()->is('jurusan/*')?'bg-secondary':'')}}">
-                                <i class="nav-icon fas fa-file-alt"></i>
+                                <i class="nav-icon fas fa-briefcase"></i>
                                 <p>
                                     JURUSAN
 
@@ -140,7 +140,7 @@
                         </li>
                         <li class="nav-item ">
                             <a href="/kelas/index" class="nav-link {{(request()->is('kelas/*')?'bg-secondary':'')}}">
-                                <i class="nav-icon fas fa-file-alt"></i>
+                                <i class="nav-icon fas fa-chalkboard"></i>
                                 <p>
                                     KELAS
 
@@ -149,7 +149,7 @@
                         </li>
                         <li class="nav-item ">
                             <a href="/mata-pelajaran/index" class="nav-link {{(request()->is('mata-pelajaran/*')?'bg-secondary':'')}}">
-                                <i class="nav-icon fas fa-file-alt"></i>
+                                <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     MATA PELAJARAN
 
@@ -158,7 +158,7 @@
                         </li>
                         <li class="nav-item ">
                             <a href="/jadwal/index" class="nav-link {{(request()->is('jadwal/*')?'bg-secondary':'')}}">
-                                <i class="nav-icon fas fa-file-alt"></i>
+                                <i class="nav-icon fas fa-clock"></i>
                                 <p>
                                     JADWAL
 
@@ -167,7 +167,7 @@
                         </li>
                         <li class="nav-item ">
                             <a href="/siswa/index" class="nav-link {{(request()->is('siswa/*')?'bg-secondary':'')}}">
-                                <i class="nav-icon fas fa-file-alt"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     SISWA
 
