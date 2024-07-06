@@ -41,7 +41,11 @@ class NilaiAkhirWebController extends Controller
 
     public function delete($id)
     {
-        NilaiAkhir::where("id", $id)->delete();
-        return redirect("/jurusan/index")->with("success_delete", "success delete data");
+        $data_nilai_akhir = NilaiAkhir::where("id", $id)->first();
+        $url = "/siswa/ujian-index/" . $data_nilai_akhir->siswa_id;
+
+
+        $data_nilai_akhir->delete();
+        return redirect($url)->with("success_delete", "success delete data");
     }
 }

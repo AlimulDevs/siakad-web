@@ -51,6 +51,7 @@ Route::get('/siswa/edit-index/{id}', [ViewWebController::class, 'siswaEditIndex'
 Route::get('/siswa/ujian-index/{siswa_id}', [ViewWebController::class, 'siswaUjianIndex']);
 Route::get('/siswa/ujian/create-index/{id}', [ViewWebController::class, 'siswaUjianCreateIndex']);
 Route::post('/siswa/ujian/create', [NilaiAkhirWebController::class, 'create']);
+Route::get('/siswa/ujian/delete/{id}', [NilaiAkhirWebController::class, 'delete']);
 
 // jurusan
 Route::get('/jurusan/index', [ViewWebController::class, 'jurusanIndex']);
