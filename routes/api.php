@@ -7,6 +7,7 @@ use App\Http\Controllers\API\JurusanApiController;
 use App\Http\Controllers\API\KelasApiController;
 use App\Http\Controllers\API\MataPelajaranApiController;
 use App\Http\Controllers\API\NilaiAkhirApiController;
+use App\Http\Controllers\API\TugasApiController;
 use App\Http\Controllers\API\UserApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -69,4 +70,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
     Route::GET('/siswa/nilai-akhir', [NilaiAkhirApiController::class, "getBySiswa"]);
+
+    Route::POST('/tugas', [TugasApiController::class, "create"]);
+    Route::GET('/tugas/{jadwal_id}', [TugasApiController::class, "getByJadwal"]);
+    Route::DELETE('/tugas/{id}', [TugasApiController::class, "delete"]);
 });

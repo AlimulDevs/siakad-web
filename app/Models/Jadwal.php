@@ -32,6 +32,10 @@ class Jadwal extends Model
     {
         return $this->hasMany(WaktuJadwal::class);
     }
+    public function tugas()
+    {
+        return $this->hasMany(Tugas::class);
+    }
 
     public function absen()
     {
