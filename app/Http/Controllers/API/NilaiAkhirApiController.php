@@ -13,7 +13,7 @@ class NilaiAkhirApiController extends Controller
     {
         $data_siswa = Siswa::where("user_id", auth()->user()->id)->first();
 
-        $nilai_akhir = NilaiAkhir::where("siswa_id", $data_siswa->id)->get();
+        $nilai_akhir = NilaiAkhir::where("siswa_id", $data_siswa->id)->with(["siswa", "mata_pelajaran"])->get();
         return response()->json([
             'isSuccess' => true,
             'message' => 'Success Get Nilai Akhir',
