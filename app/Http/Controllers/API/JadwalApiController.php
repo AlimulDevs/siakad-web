@@ -15,7 +15,7 @@ class JadwalApiController extends Controller
     {
 
 
-        $data_jadwal = Jadwal::with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal", "absen"])->get();
+        $data_jadwal = Jadwal::with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal", "absen.siswa_absen.siswa.user"])->get();
         return response()->json([
             "message" => "Success Get By Kelas",
             "data" => $data_jadwal
@@ -25,7 +25,7 @@ class JadwalApiController extends Controller
     {
         $data_siswa = Siswa::where("user_id", auth()->user()->id)->first();
 
-        $data_jadwal = Jadwal::where("kelas_id", $data_siswa->kelas_id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal.jadwal.mata_pelajaran", "absen", "tugas"])->get();
+        $data_jadwal = Jadwal::where("kelas_id", $data_siswa->kelas_id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal.jadwal.mata_pelajaran", "absen.siswa_absen.siswa.user", "tugas"])->get();
         return response()->json([
             "message" => "Success Get By Kelas",
             "data" => $data_jadwal
@@ -35,7 +35,7 @@ class JadwalApiController extends Controller
     {
         $data_siswa = Siswa::where("user_id", auth()->user()->id)->first();
 
-        $data_jadwal = Jadwal::where("kelas_id", $data_siswa->kelas_id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal.jadwal.mata_pelajaran", "absen", "tugas"])->get();
+        $data_jadwal = Jadwal::where("kelas_id", $data_siswa->kelas_id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal.jadwal.mata_pelajaran", "absen.siswa_absen.siswa.user", "tugas"])->get();
         $data_waktu_jadwal = [];
 
         foreach ($data_jadwal as $dtj) {
@@ -52,7 +52,7 @@ class JadwalApiController extends Controller
     public function getByGuru()
     {
         $data_guru = Guru::where("user_id", auth()->user()->id)->first();
-        $data_jadwal = Jadwal::where("guru_id", $data_guru->id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal", "absen", "tugas"])->get();
+        $data_jadwal = Jadwal::where("guru_id", $data_guru->id)->with(["absen", "guru.user", "kelas", "mata_pelajaran", "waktu_jadwal", "absen.siswa_absen.siswa.user", "tugas"])->get();
         return response()->json([
             "message" => "Success Get By Guru",
             "data" => $data_jadwal
