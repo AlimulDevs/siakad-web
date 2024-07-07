@@ -11,6 +11,7 @@ class MataPelajaran extends Model
     protected $fillable = [
         'mata_pelajaran',
         'jurusan_id',
+        'kkm',
     ];
 
     public function jurusan()
