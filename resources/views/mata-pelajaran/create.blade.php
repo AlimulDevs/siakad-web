@@ -60,6 +60,10 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="kkm">KKM</label>
+                    <input type="number" class="form-control" name="kkm" id="kkm" placeholder="Masukkan kkm">
+                </div>
 
 
 

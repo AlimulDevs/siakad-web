@@ -60,6 +60,7 @@
                             <th>Nomor</th>
                             <th>Nama</th>
                             <th>Jurusan</th>
+                            <th>KKM</th>
                             <th>Aksi</th>
 
                         </tr>
@@ -73,6 +74,7 @@
                             <td>{{$no++}}</td>
                             <td>{{$dtk->mata_pelajaran}}</td>
                             <td>{{$dtk->jurusan->name}}</td>
+                            <td>{{$dtk->kkm}}</td>
                             <td>
 
                                 <a href="/mata-pelajaran/edit-index/{{$dtk->id}}" class="btn btn-sm btn-warning"><i class="fas fa-edit text-white"></i></a>
@@ -90,48 +92,7 @@
     </div>
 
 </div>
-<script>
-    var bulanArray = [
-        "Januari",
-        "Februari",
-        "Maret",
-        "April",
-        "Mei",
-        "Juni",
-        "Juli",
-        "Agustus",
-        "September",
-        "Oktober",
-        "November",
-        "Desember"
-    ];
 
-    const getBulanFilter = document.getElementById("bulan-filter");
-
-    bulanArray.map((data) => {
-        getBulanFilter.innerHTML += ` <option value="${data}">${data}</option>`
-    })
-
-    getBulanFilter.addEventListener("change", function() {
-        var selectedMonth = this.value;
-        var tableRows = document.querySelectorAll("#example2 tbody tr");
-
-        if (selectedMonth === "all") {
-            tableRows.forEach(function(row) {
-                row.style.display = "table-row";
-            });
-        } else {
-            tableRows.forEach(function(row) {
-                var monthCell = row.querySelectorAll("td")[3].innerText; // Kolom ke-4 berisi bulan
-                if (monthCell === selectedMonth) {
-                    row.style.display = "table-row";
-                } else {
-                    row.style.display = "none";
-                }
-            });
-        }
-    });
-</script>
 
 
 </div>

@@ -17,6 +17,7 @@ class CreateMataPelajaransTable extends Migration
             $table->id();
             $table->unsignedBigInteger("jurusan_id");
             $table->string('mata_pelajaran');
+            $table->integer('kkm')->nullable();
             $table->foreign("jurusan_id")->references("id")->on("jurusans")->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();

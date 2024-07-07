@@ -13,6 +13,7 @@ class MataPelajaranWebController extends Controller
 
         MataPelajaran::create([
             "mata_pelajaran" => $request->mata_pelajaran,
+            "kkm" => $request->kkm,
             "jurusan_id" => $request->jurusan_id,
 
         ]);
@@ -26,6 +27,7 @@ class MataPelajaranWebController extends Controller
         MataPelajaran::where("id", $request->id)->update([
 
             "mata_pelajaran" => $request->mata_pelajaran,
+            "kkm" => $request->kkm,
             "jurusan_id" => $request->jurusan_id,
 
         ]);
